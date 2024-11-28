@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+    <a th:href="@{/}" >Home</a>
+    <br />
+    <div th:unless="${#lists.isEmpty(books)}">
+        <dl th:each="book : ${books}">
+            <dt class="bookHeadline">
+                <span th:text="${book.title}">Title</span> by
+                <span th:text="${book.author}">Author</span>
+                <br />
+            </dt>
+
+        </dl>
+    </div>
+</body>
+</html>
